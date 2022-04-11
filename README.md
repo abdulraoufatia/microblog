@@ -7,7 +7,7 @@ The concepts covered are :
 - Loops
 - Template Inheritance
 
-The DevOps Topics Covered:
+The DevOps Practices used and their application:
 
 - Package Management: Poetry
 
@@ -35,6 +35,7 @@ The project uses a virtual environment to isolate package dependencies. To creat
 ```bash
 poetry install
 ```
+
 ## Running the App
 
 Once the all dependencies have been installed and relevant information has been inputted, start the Flask app in development mode within the poetry environment by running:
