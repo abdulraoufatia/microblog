@@ -1,15 +1,15 @@
 [tool.poetry]
 name = "Microblog"
 version = "0.1.0"
-description = "My microblog"
-authors = []
+description = ""
+authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-flask = "^1.1.2"
+Flask = "^2.1.1"
 
 [tool.poetry.dev-dependencies]
-requests = "^2.27.1"
+Flask = "^2.1.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
