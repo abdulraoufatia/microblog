@@ -1,11 +1,23 @@
 # My Microblog
 
+## Guidance
+
+This README is structured like this:
+
+- A repository map 
+- Flask concepts used
+- Devops practices exercised 
+- How you can use this for personal use 
+
+### Repository Map
+
 The concepts covered are :
 
 - Templates
 - Conditional Statements
 - Loops
-- Template Inheritance
+- Templates
+- Web Forms
 
 The DevOps Topics Covered:
 
@@ -26,6 +38,36 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 ```powershell
 (Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python -
 
+```
+
+Once Poetry is installed, it does not need activating. It can be used in the different ways, see [documetnation](https://python-poetry.org/docs/cli/). 
+
+### Virtualenv installation and activation
+
+The project also utalises a virtualenv for Python to create isolated environemtns. 
+
+```bash
+pip install virtualenv
+```
+
+You would then need to create a virtual env. for the project:
+
+```
+python3 -m venv name-of-venv
+
+```
+Activate the venv (Mac OS):
+
+```bash
+
+source name-of-venv/bin/activate
+```
+
+Activate the venv (Windows OS):
+
+```bash
+
+source name-of-venv/Scripts/activate
 ```
 
 ## Dependencies
