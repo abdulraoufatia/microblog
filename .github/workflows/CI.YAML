@@ -1,13 +1,16 @@
 name: Continuous Integration
 on: [push]
+
 env:
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
 jobs:
   build:
     name: Build and test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    
     - name: Slack Notification
       uses: act10ns/slack@v1
       with:
