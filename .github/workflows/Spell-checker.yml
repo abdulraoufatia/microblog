@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     aspell:
         lang: en
-            d: en_GB
+        d: en_GB
     steps:
     
     - uses: actions/checkout@master
