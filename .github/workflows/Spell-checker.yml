@@ -5,16 +5,14 @@ jobs:
   build:
     name: Spellcheck
     runs-on: ubuntu-latest
+    aspell:
+        lang: en
+            d: en_GB
     steps:
     
     - uses: actions/checkout@master
     - uses: rojopolis/spellcheck-github-actions@0.23.2
       name: Spellcheck
-      aspell:
-        lang: en
-        d: en_GB
       with:
-        source_files: README.md CHANGELOG.md notes/Notes.md
+        source_files: README.md
         task_name: Markdown
-
-      
