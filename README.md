@@ -22,6 +22,7 @@ The concepts covered are :
 The DevOps Topics Covered:
 
 - Package Management: Poetry
+- Continious Integration: GitHub Actions
 
 ## System Requirements
 
