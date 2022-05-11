@@ -1,0 +1,29 @@
+name: Testing Application 
+on:
+  pull_request:
+    types:
+      - [opened, review_requested, ready_for_review]
+    branches:
+    - 'L-***'
+    paths: 
+      - '.' 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: abdulraoufatia/microblog@main
+    with:
+      source: .
+      target: microblog/
+    steps: installing virtualenv
+      - run: pip install virtualenv
+    steps: creating a virtual env
+      - run: pip -m venv .venv
+    steps: installing poetry
+      - run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+    steps: installing dependencies
+      - run: poetry install 
+    
+
+ 

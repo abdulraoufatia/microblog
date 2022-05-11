@@ -53,7 +53,7 @@ pip install virtualenv
 You would then need to create a virtual env. for the project:
 
 ```
-python3 -m venv name-of-venv
+pip -m venv name-of-venv
 
 ```
 Activate the venv (Mac OS):
