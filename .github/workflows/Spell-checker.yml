@@ -6,8 +6,8 @@ jobs:
     name: Spellcheck
     runs-on: ubuntu-latest
     aspell:
-        lang: en
-        d: en_GB
+      lang: en
+      d: en_GB
     steps:
     
     - uses: actions/checkout@master
