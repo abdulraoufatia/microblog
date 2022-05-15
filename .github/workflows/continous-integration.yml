@@ -4,8 +4,8 @@ on: push
 env:
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
   SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-  with:
-    args: --sarif-file-output=snyk.sarif
+with:
+   args: --sarif-file-output=snyk.sarif
 
 jobs:
   build:
