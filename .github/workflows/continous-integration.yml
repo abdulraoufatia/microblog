@@ -3,9 +3,6 @@ on: push
 
 env:
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-with:
-   args: --sarif-file-output=snyk.sarif
 
 jobs:
   build:
@@ -22,10 +19,14 @@ jobs:
         message: 'GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}'
       if: always()
 
-    - name: Initating Security Scan
+    - name: Run Snyk to check for vulnerabilities
       uses: snyk/actions/python-3.8@master
-
-    - name: Uploading result to GitHub Code Scanning
+      continue-on-error: true # To make sure that SARIF upload gets called
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        args: --sarif-file-output=snyk.sarif
+    - name: Upload result to GitHub Code Scanning
       uses: github/codeql-action/upload-sarif@v1
       with:
         sarif_file: snyk.sarif
