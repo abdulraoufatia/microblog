@@ -3,6 +3,7 @@ on: push
 
 env:
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
 jobs:
   build:
@@ -11,6 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Run Snyk to check for vulnerabilities
+      uses: snyk/actions/python-3.8@master
+        
     - name: Slack Notification
       uses: act10ns/slack@v1
       with:
