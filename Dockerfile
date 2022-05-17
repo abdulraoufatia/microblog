@@ -1,4 +1,4 @@
-FROM python:3.7.13-slim-buster as base
+FROM python:3.10.4-slim-buster as base
 
 WORKDIR /app
 
@@ -6,7 +6,7 @@ ENV PATH="${PATH}:/root/.poetry/bin"
 
 RUN apt-get update \
     && apt-get -y install curl \
-    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+    && curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 
 EXPOSE 4000
 
