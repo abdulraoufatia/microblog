@@ -82,7 +82,7 @@ poetry install
 To add a dependency:
 
 ```bash
-poetry add <NAME_OF_DEPENDENCY
+poetry add <NAME_OF_DEPENDENCY>
 ```
 
 ## Running the App
@@ -117,7 +117,7 @@ To get started, you need to install a containerisation tool. The containerisatio
 
 #### Build and run the Docker Image
 
-This project is buit using mutlti-stage builds. Mutil-stage builds are useful to optimise Dockerfiles while keeping them easy to read and maintain.  
+This project is built using mutlti-stage builds. Mutil-stage builds are useful to optimise Dockerfiles while keeping them easy to read and maintain. To learn more about multi-stage builds, see [Use multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/) from the offical Docker documentation.
 
 To build the development enviornment, run the following command:
 
