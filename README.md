@@ -5,11 +5,10 @@
 This README is structured like this:
 
 - A repository map
-- Flask concepts used
+- Application Features
 - Devops practices exercised
-- How you can use this for personal use
 
-### Repository Map
+### Application Features
 
 The concepts covered are :
 
@@ -165,4 +164,18 @@ Skipping virtualenv creation, as specified in config file.
  * Running on http://172.17.0.2:5000 (Press CTRL+C to quit)
 ```
 
+## Advanced Features of Docker - Docker Compose
+Launching containers with long docker run commands can become tedious, and difficult to share with other developers. The basic principle of 'docker compose' is utilised to launch long docker run commands. So, rather than running the afrementioned commands, one could run a simple: 
+
+```bash
+docker-compose up --build 
+```
+
+
+Note: docker-compose.yml is configured in YAML. To further develop your understanding, please see [this link](https://docs.docker.com/compose/gettingstarted/) --> Docker Compose Getting Started | See step 3
+
+Once running the docker compose command, we should see something similar to this:
+
+
+![plot](./images/docker-compose-success.png)
 
