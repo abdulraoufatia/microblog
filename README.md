@@ -165,7 +165,11 @@ Skipping virtualenv creation, as specified in config file.
 ```
 
 ## Advanced Features of Docker - Docker Compose
-Launching containers with long docker run commands can become tedious, and difficult to share with other developers. The basic principle of 'docker compose' is utilised to launch long docker run commands. So, rather than running the afrementioned commands, one could run a simple: 
+Launching containers with long docker run commands can become tedious, and difficult to share with other developers. 
+
+### Building your image
+
+The basic principle of 'docker compose' is utilised to launch long docker run commands. So, rather than running the afrementioned commands, one could run a simple: 
 
 ```bash
 docker-compose up --build 
@@ -174,8 +178,11 @@ docker-compose up --build
 
 Note: docker-compose.yml is configured in YAML. To further develop your understanding, please see [this link](https://docs.docker.com/compose/gettingstarted/) --> Docker Compose Getting Started | See step 3
 
-Once running the docker compose command, we should see something similar to this:
+Once running the docker compose command, you should see something similar to this:
 
 
-![plot](./images/docker-compose-success.png)
+![docker-compose-success](./images/docker-compose-success.png)
 
+When you are ready to tear it all down, simply run ```docker-compose down``` command. The containers will stop and the network will be removed. Below is an expected outcome. 
+
+![plot](./images/docker-compose-down-success.png)
