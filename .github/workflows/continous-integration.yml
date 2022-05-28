@@ -9,7 +9,9 @@ jobs:
   Security:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@master
       - uses: snyk/actions/setup@master
+      - uses: snyk/actions/python@master
       - name: Monitoring Project
         run: snyk test    
 
