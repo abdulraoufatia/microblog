@@ -13,16 +13,21 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Scanning Python code for vulnerabilities
-      uses: snyk/actions/python-3.8@master
+      uses: snyk/actions/python@master
+      with:
+        command: monitor
 
     - name: Buidling Docker Image
       run: docker build --target development --tag microblog:development .
 
     - name: Scanning Docker Image for vulnerabilities
       uses: snyk/actions/docker@master
+      continue-on-error: true
       with:
         image: microblog:development
-        args: --file=Dockerfile
+        args: --file=Dockerfile 
+        args: --severity-threshold=high
+
               
     - name: Slack Notification
       uses: act10ns/slack@v1
