@@ -22,6 +22,7 @@ jobs:
       uses: snyk/actions/docker@master
       with:
         image: microblog:development
+        args: --severity-threshold=high
               
     - name: Slack Notification
       uses: act10ns/slack@v1
