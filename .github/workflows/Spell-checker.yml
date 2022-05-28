@@ -7,11 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-    - uses: actions/checkout@master
-    - uses: rojopolis/spellcheck-github-actions@0.23.2
-      name: Spellcheck
+    - uses: check-spelling/check-spelling@main
+      id: spelling
+      if: ${{ github.event_name != 'issue_comment' ||
+        (
+          contains(github.event.comment.body, '@check-spelling-bot apply')
+        ) }}
       with:
-        source_files: README.md
-        task_name: Markdown
+        experimental_apply_changes_via_bot: 1
 
   
