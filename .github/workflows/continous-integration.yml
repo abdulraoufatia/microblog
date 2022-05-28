@@ -6,19 +6,6 @@ env:
   SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
 jobs:
-  # Security:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@master
-  #     - uses: snyk/actions/setup@master
-  #     - uses: snyk/actions/python@master
-  #     - name: Monitoring Project
-  #       run: |
-  #         pip install -r requirements.txt
-  #         snyk test
-
-
-
   build:
     name: Build and test
     runs-on: ubuntu-latest
