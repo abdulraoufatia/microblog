@@ -13,7 +13,10 @@ jobs:
       - uses: snyk/actions/setup@master
       - uses: snyk/actions/python@master
       - name: Monitoring Project
-        run: snyk test    
+        run: |
+          pip install -r requirements.txt
+          snyk test
+
 
 
   build:
