@@ -6,13 +6,23 @@ env:
   SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
 jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: snyk/actions/setup@master
+      - name: Monitoring Project
+        run: snyk test
+        with:
+          command: monitor      
+
+
   build:
     name: Build and test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
 
-    - name: Scanning Python code for vulnerabilities
+    - name: Scanning Python code for vulnerabilities and monitoring dependencies 
       uses: snyk/actions/python@master
       with:
         command: monitor
@@ -25,7 +35,7 @@ jobs:
       continue-on-error: true
       with:
         image: microblog:development
-        args: --file=Dockerfile && --severity-threshold=high
+        args: --severity-threshold=high
 
               
     - name: Slack Notification

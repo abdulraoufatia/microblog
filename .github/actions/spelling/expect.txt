@@ -1,4 +1,5 @@
 Abdulraouf
+abdulraoufatia
 api
 Atia
 backend
@@ -11,6 +12,7 @@ endfor
 endif
 fsevents
 gettingstarted
+github
 githubusercontent
 gunicorn
 href
@@ -24,12 +26,14 @@ png
 Powershell
 pwd
 pyspelling
+svg
 tarball
 username
 validators
 venv
 virtualenv
 WORKDIR
+workflows
 WSGI
 wtf
 wtforms
