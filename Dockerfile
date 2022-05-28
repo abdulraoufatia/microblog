@@ -11,7 +11,7 @@ RUN apt-get update \
 EXPOSE 4000
 
 COPY . /app/
-
+  
 RUN poetry config virtualenvs.create false --local && poetry install
 
 FROM base as development
