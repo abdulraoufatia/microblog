@@ -1,4 +1,6 @@
 # My Microblog
+[![Spell Checking](https://github.com/abdulraoufatia/microblog/actions/workflows/Spell-checker.yml/badge.svg)](https://github.com/abdulraoufatia/microblog/actions/workflows/Spell-checker.yml)
+
 
 ## Guidance
 

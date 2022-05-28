@@ -15,11 +15,6 @@ jobs:
     - name: Scanning Python code for vulnerabilities
       uses: snyk/actions/python-3.8@master
 
-    - name: Uploading result to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: snyk.sarif
-
     - name: Buidling Docker Image
       run: docker build --target development --tag microblog:development .
 
@@ -28,11 +23,6 @@ jobs:
       with:
         image: microblog:development
         args: --file=Dockerfile
-
-    - name: Uploading result to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: snyk.sarif
               
     - name: Slack Notification
       uses: act10ns/slack@v1
