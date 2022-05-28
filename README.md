@@ -20,7 +20,11 @@ The concepts covered are :
 - Web Forms
 - View Forms
 
+
+The DevOps Practices used and their application:
+
 The DevOps topics and their applications covered:
+
 
 - Package Management: Poetry
 - Containerisation: Docker
@@ -79,11 +83,13 @@ The project uses a virtual environment to isolate package dependencies. To creat
 poetry install
 ```
 
+
 To add a dependency:
 
 ```bash
 poetry add <NAME_OF_DEPENDENCY>
 ```
+
 
 ## Running the App
 
