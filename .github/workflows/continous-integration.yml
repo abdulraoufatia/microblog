@@ -11,9 +11,7 @@ jobs:
     steps:
       - uses: snyk/actions/setup@master
       - name: Monitoring Project
-        run: snyk test
-        with:
-          command: monitor      
+        run: snyk test    
 
 
   build:
