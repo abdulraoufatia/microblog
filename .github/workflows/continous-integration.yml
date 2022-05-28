@@ -12,12 +12,17 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Scanning Python code for vulnerabilities
+      uses: snyk/actions/python-3.8@master
+
     - name: Buidling Docker Image
       run: docker build --target development --tag microblog:development .
 
-    - name: Run Snyk to check for vulnerabilities
-      uses: snyk/actions/python-3.8@master
-        
+    - name: Scanning Docker Image for vulnerabilities
+      uses: snyk/actions/docker@master
+      with:
+        image: microblog:development
+              
     - name: Slack Notification
       uses: act10ns/slack@v1
       with:
