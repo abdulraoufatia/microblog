@@ -25,8 +25,7 @@ jobs:
       continue-on-error: true
       with:
         image: microblog:development
-        args: --file=Dockerfile 
-        args: --severity-threshold=high
+        args: --file=Dockerfile,--severity-threshold=high
 
               
     - name: Slack Notification
