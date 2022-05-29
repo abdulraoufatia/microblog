@@ -2,4 +2,5 @@
 ^images/docker-compose-success\.png$
 ^images/L-91_Template_Inheritance_Final\.png$
 ^poetry\.lock$
+^\.github/actions/spelling/expect\.txt$
 ^\.gitignore$
