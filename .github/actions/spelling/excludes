@@ -1,3 +1,7 @@
+^Documentation/build/html/_static/file\.png$
+^Documentation/build/html/_static/minus\.png$
+^Documentation/build/html/_static/plus\.png$
+^Documentation/modules\.rst$
 ^images/docker-compose-down-success\.png$
 ^images/docker-compose-success\.png$
 ^images/L-91_Template_Inheritance_Final\.png$
