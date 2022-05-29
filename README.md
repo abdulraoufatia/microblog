@@ -44,7 +44,7 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 
 ```
 
-Once Poetry is installed, it does not need activating. It can be used in the different ways, see [documetnation](https://python-poetry.org/docs/cli/).
+Once Poetry is installed, it does not need activating. It can be used in the different ways, see [documentation](https://python-poetry.org/docs/cli/).
 
 ### Virtualenv installation and activation
 
