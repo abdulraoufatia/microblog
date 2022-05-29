@@ -19,11 +19,9 @@ The concepts covered are :
 - Web Forms
 - View Forms
 
-
 The DevOps Practices used and their application:
 
 The DevOps topics and their applications covered:
-
 
 - Package Management: Poetry
 - Containerisation: Docker
@@ -46,11 +44,11 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 
 ```
 
-Once Poetry is installed, it does not need activating. It can be used in the different ways, see [documetnation](https://python-poetry.org/docs/cli/).
+Once Poetry is installed, it does not need activating. It can be used in the different ways, see [documentation](https://python-poetry.org/docs/cli/).
 
 ### Virtualenv installation and activation
 
-The project also utalises a virtualenv for Python to create isolated environemtns.
+The project also utilises a virtualenv for Python to create isolated environments.
 
 ```bash
 pip install virtualenv
@@ -82,13 +80,11 @@ The project uses a virtual environment to isolate package dependencies. To creat
 poetry install
 ```
 
-
 To add a dependency:
 
 ```bash
 poetry add <NAME_OF_DEPENDENCY>
 ```
-
 
 ## Running the App
 
@@ -114,7 +110,7 @@ Now visit [`http://localhost:5000/`](http://localhost:5000/) in your web browser
 
 ## DevOps Applications - Containerisation
 
-This application utilises a DevOps concept known as Containerisation. Containerisation entails placing a software component and it's environement, dependencies, and configuration, into an insolated unit called a container. This makes it poosible to deploy an application consistently on any computing environment, whether on-premise or cloud-based.
+This application utilises a DevOps concept known as Containerisation. Containerisation entails placing a software component and it's environment, dependencies, and configuration, into an insolated unit called a container. This makes it possible to deploy an application consistently on any computing environment, whether on-premise or cloud-based.
 
 To get started, you need to install a containerisation tool. The containerisation tool used for this project was Docker. However, you may find alternatives depending on your Operating System.
 
@@ -122,9 +118,9 @@ To get started, you need to install a containerisation tool. The containerisatio
 
 #### Build and run the Docker Image
 
-This project is built using mutlti-stage builds. Mutil-stage builds are useful to optimise Dockerfiles while keeping them easy to read and maintain. To learn more about multi-stage builds, see [Use multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/) from the offical Docker documentation.
+This project is built using multi-stage builds. Multi-stage builds are useful to optimise Dockerfiles while keeping them easy to read and maintain. To learn more about multi-stage builds, see [Use multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/) from the official Docker documentation.
 
-To build the development enviornment, run the following command:
+To build the development environment, run the following command:
 
 ```bash
 docker build --target development --tag microblog:development .
@@ -171,24 +167,23 @@ Skipping virtualenv creation, as specified in config file.
 ```
 
 ## Advanced Features of Docker - Docker Compose
-Launching containers with long docker run commands can become tedious, and difficult to share with other developers. 
+
+Launching containers with long docker run commands can become tedious, and difficult to share with other developers.
 
 ### Building your image
 
-The basic principle of 'docker compose' is utilised to launch long docker run commands. So, rather than running the afrementioned commands, one could run a simple: 
+The basic principle of 'docker compose' is utilised to launch long docker run commands. So, rather than running the aforementioned commands, one could run a simple:
 
 ```bash
 docker-compose up --build 
 ```
 
-
 Note: docker-compose.yml is configured in YAML. To further develop your understanding, please see [this link](https://docs.docker.com/compose/gettingstarted/) --> Docker Compose Getting Started | See step 3
 
 Once running the docker compose command, you should see something similar to this:
 
-
 ![docker-compose-success](./images/docker-compose-success.png)
 
-When you are ready to tear it all down, simply run ```docker-compose down``` command. The containers will stop and the network will be removed. Below is an expected outcome. 
+When you are ready to tear it all down, simply run ```docker-compose down``` command. The containers will stop and the network will be removed. Below is an expected outcome.
 
 ![plot](./images/docker-compose-down-success.png)
