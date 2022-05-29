@@ -1,10 +1,11 @@
-^\.github/actions/spelling/expect\.txt$
-^\.gitignore$
 ^Documentation/build/html/_static/file\.png$
 ^Documentation/build/html/_static/minus\.png$
 ^Documentation/build/html/_static/plus\.png$
 ^Documentation/modules\.rst$
-^images/L-91_Template_Inheritance_Final\.png$
 ^images/docker-compose-down-success\.png$
 ^images/docker-compose-success\.png$
+^images/L-91_Template_Inheritance_Final\.png$
 ^poetry\.lock$
+^poetry\.lock$^\.github/actions/spelling/expect\.txt$
+^\.github/actions/spelling/expect\.txt$
+^\.gitignore$
