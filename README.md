@@ -56,7 +56,7 @@ pip install virtualenv
 
 You would then need to create a virtual env. for the project:
 
-```
+```bash
 pip -m venv name-of-venv
 ```
 
