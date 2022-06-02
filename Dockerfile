@@ -22,4 +22,4 @@ CMD ["poetry", "run", "flask", "run", "--host", "0.0.0.0"]
 
 FROM base as production
 
-CMD poetry run gunicorn -b 0.0.0.0:$PORT
+CMD poetry run gunicorn -b 0.0.0.0:$PORT "app.routes:app"
