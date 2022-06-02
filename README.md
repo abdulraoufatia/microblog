@@ -25,7 +25,8 @@ The DevOps topics and their applications covered:
 
 - Package Management: Poetry
 - Containerisation: Docker
-- Continious Integration: GitHub Actions
+- Continious Integration: GitHub Actions / Docker
+- Continious Delivery: GitHub Actions / Dockerhub / Heroku
 
 ## System Requirements
 
