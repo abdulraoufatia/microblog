@@ -220,7 +220,6 @@ Continuous Integration (CI) is a DevOps software development practice where deve
 5. Image deployed on Heroku
 6. Notification is sent
 
-
 ### Important Heroku Dockerfile commands and runtime
 
 - If argument `target : <name_of_env>` is set to a specific target, it will upload the target name, the stage by default will upload the last stage. This is because, in our application, it's production, if you were to change this to `test`, the `test` target stage will be pushed to Dockerhub (action name = Pushing to DockerHub )
