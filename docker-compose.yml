@@ -1,6 +1,6 @@
 version: '3.9'
 services:
-    web-dev:
+    web-development:
         build: 
             context: .
             target: development
