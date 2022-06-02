@@ -27,3 +27,6 @@ def login():
             form.username.data, form.username.data))
         return redirect('/index')
     return render_template('login.html', title='Sign In', form=form)
+
+if __name__ == '__main__':
+    app.run()

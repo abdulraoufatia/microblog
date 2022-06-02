@@ -187,3 +187,41 @@ Once running the docker compose command, you should see something similar to thi
 When you are ready to tear it all down, simply run ```docker-compose down``` command. The containers will stop and the network will be removed. Below is an expected outcome.
 
 ![plot](./images/docker-compose-down-success.png)
+
+#### Running individual containers
+
+If you wish to run a container seperately, use each command respecitively either:
+
+```bash
+docker-compose up web-development
+```
+
+```bash
+docker-compose up web-production
+```
+
+## Application of Continious Integration and Continious Delivery
+
+Continuous Integration (CI) is a DevOps software development practice where developers regularly merge their code changes into a central repository, after which automated builds and tests are run. This repoistory CI pipeline is set in the following manner:
+
+### Continuous Integration
+
+1. It runs Snyk to check for vulnerabilities with the python application
+2. It builds the test image
+3. It runs the test image, printing the results of the test, if all is well it proceed with the next step;
+4. Notification is sent
+
+### Continious Delivery
+
+1. Second job will run upon the success of first job (CI)
+2. Docker buildx is set up
+3. Docker is authenticated
+4. Production image is pushed to docker (using argument  `target: production`)
+5. Image deployed on Heroku
+6. Notification is sent
+
+### Important Heroku Dockerfile commands and runtime
+
+- If argument `target : <name_of_env>` is set to a specific target, it will upload the target name, the stage by default will upload the last stage. This is because, in our application, it's production, if you were to change this to `test`, the `test` target stage will be pushed to Dockerhub (action name = Pushing to DockerHub )
+- The web process must listen for HTTP traffic on $PORT, which is set by Heroku
+- EXPOSE in Dockerfile is not respected, but can be used for local testing. Only HTTP requests are supported.
