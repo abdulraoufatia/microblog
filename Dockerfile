@@ -4,6 +4,8 @@ WORKDIR /app
 
 ENV PATH="${PATH}:/root/.poetry/bin" 
 
+ENV $PORT=4000
+
 ARG DEV_PORT=4000
 
 RUN apt-get update \
