@@ -226,3 +226,10 @@ Continuous Integration (CI) is a DevOps software development practice where deve
 - If argument `target : <name_of_env>` is set to a specific target, it will upload the target name, the stage by default will upload the last stage. This is because, in our application, it's production, if you were to change this to `test`, the `test` target stage will be pushed to Dockerhub (action name = Pushing to DockerHub )
 - The web process must listen for HTTP traffic on $PORT, which is set by Heroku
 - EXPOSE in Dockerfile is not respected, but can be used for local testing. Only HTTP requests are supported.
+
+## Automated Testing
+- to use pytest
+
+Ideas:
+[] - testing field validation
+[] - closing of for loop in login.html ({% endfor %})
