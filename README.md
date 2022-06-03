@@ -231,5 +231,5 @@ Continuous Integration (CI) is a DevOps software development practice where deve
 - to use pytest
 
 Ideas:
-[] - testing field validation
-[] - closing of for loop in login.html ({% endfor %})
+- [ ] - testing field validation
+- [ ] - closing of for loop in login.html ({% endfor %})
