@@ -18,6 +18,11 @@ This README is structured like this:
 - Templates
 - Web Forms
 - View Forms
+- Receiving Form Data
+- Improving Field Validation
+- Generating links with `url_for` flask argument
+- Databases in Flask
+- Database Migration
 
 #### The DevOps Practices used and their application:
 
