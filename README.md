@@ -233,3 +233,4 @@ Continuous Integration (CI) is a DevOps software development practice where deve
 Ideas:
 - [ ] - testing field validation
 - [ ] - closing of for loop in login.html ({% endfor %})
+- [ ] - to see if all packages are installed with correct versions as stated within pyproject.toml
