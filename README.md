@@ -171,7 +171,7 @@ Launching containers with long docker run commands can become tedious, and diffi
 
 ### Building your image
 
-The basic principle of 'docker compose' is utilised to launch long docker run commands. So, rather than running the aforementioned commands, one could run a simple:
+The basic principle of `docker compose` is utilised to launch long docker run commands. So, rather than running the aforementioned commands, one could run a simple:
 
 ```bash
 docker-compose up --build 
