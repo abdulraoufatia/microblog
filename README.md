@@ -10,7 +10,7 @@ This README is structured like this:
 
 ### Application Features
 
-The concepts covered are :
+#### The concepts covered are :
 
 - Templates
 - Conditional Statements
@@ -19,9 +19,7 @@ The concepts covered are :
 - Web Forms
 - View Forms
 
-The DevOps Practices used and their application:
-
-The DevOps topics and their applications covered:
+#### The DevOps Practices used and their application:
 
 - Package Management: Poetry
 - Containerisation: Docker
