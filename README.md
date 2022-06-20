@@ -10,7 +10,7 @@ This README is structured like this:
 
 ### Application Features
 
-#### The concepts covered are :
+#### The concepts covered are
 
 - Templates
 - Conditional Statements
@@ -24,12 +24,13 @@ This README is structured like this:
 - Databases in Flask
 - Database Migration
 
-#### The DevOps Practices used and their application:
+#### The DevOps Practices used and their application
 
 - Package Management: Poetry
 - Containerisation: Docker
 - Continious Integration: GitHub Actions / Docker
 - Continious Delivery: GitHub Actions / Dockerhub / Heroku
+- Database Management: SQLAlchemy
 
 ## System Requirements
 
@@ -231,9 +232,11 @@ Continuous Integration (CI) is a DevOps software development practice where deve
 - EXPOSE in Dockerfile is not respected, but can be used for local testing. Only HTTP requests are supported.
 
 ## Automated Testing
+
 - to use pytest
 
 Ideas:
+
 - [ ] - testing field validation
 - [ ] - closing of for loop in login.html ({% endfor %})
 - [ ] - to see if all packages are installed with correct versions as stated within pyproject.toml
