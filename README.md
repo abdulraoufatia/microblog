@@ -225,11 +225,50 @@ Continuous Integration (CI) is a DevOps software development practice where deve
 5. Image deployed on Heroku
 6. Notification is sent
 
+
+## Detecting and Fixing Dependency Vulnerabilities
+
+This project utalises the `snyk fix` command, `snyk fix ` is a new CLI command to apply the recommended updates for supported ecosystems automatically. Snyk CLI bring functionality of Snyk into the workflow. The CLI can be run locally or in the CI/CD pipeline to scan for vulnerabilities and licencse issues. 
+
+Snyk CLI is Open Source and Supprts many languages and tools including Java, .NET, JavaScript, Python, Golang, PHP, C/C++, Ruby, and Scala.
+
+### Pre-requisites
+- An account with Snyk
+- Snyk CLI Installed 
+- Snyk CLI authenticated with your device 
+
+### Getting Started with Snyk CLI - Local Machine 
+- Install snyk cli with `npm install -g snyk`
+- Authorise your snky account with the CLI with `snyk auth`, ensure to to be logged in prior to authenticating - Create an account if you do not have one. 
+- Test your application for vulnerabilities using `snyk test`
+
+![Snyk-Text](./images/L-252_Snyk_Test.png)
+
+
+- Fix the vulnerability with `snyk fix`
+
+![Snyk-Text](./images/L-252_Snyk_Fix.png)
+
+This aforeattached image represents fixing 1 vulnerable path, Pin lxml@4.8.0 to lxml@4.9.1 to fix - ✗ NULL Pointer Dereference (new) [Medium Severity][https://snyk.io/vuln/SNYK-PYTHON-LXML-2940874] in lxml@4.8.0 introduced by pyspelling@2.7.3 > lxml@4.8.0 .
+
+### Using Github Actions and Snyk 
+Run snyk Monitor on your machine (Any, virtual or local) - Sends a report to your Snyk Dashboard for further monitoring. You are able to find the latest monitored as a report.  The report will show you a project and how to fix it. You can mointor projects with Snyk Container, Snyk Opensource and Snyk IaC. 
+
 ### Important Heroku Dockerfile commands and runtime
 
 - If argument `target : <name_of_env>` is set to a specific target, it will upload the target name, the stage by default will upload the last stage. This is because, in our application, it's production, if you were to change this to `test`, the `test` target stage will be pushed to Dockerhub (action name = Pushing to DockerHub )
 - The web process must listen for HTTP traffic on $PORT, which is set by Heroku
 - EXPOSE in Dockerfile is not respected, but can be used for local testing. Only HTTP requests are supported.
+
+## Database Migration 
+The model class created wthin app/models.py defines the initial database structure (or schema) for this application. As the applcication will grow, the database schema will require changes to made. Alembic is a migration framework used by Flask-Migrate and will enable chema changes without database being re-created from scratch every time a change needs to be made. Alembic maintains a migration repository, which is a directory in which it stores its migration scripts. Each time a change is made to the database schema, a migration script is added to the repository with the details of the change.
+
+Flask-Migrate exposes its commands through the `flask` command, we the `flask` command is utalised through `flask run`, a sub-command native to Flask. The `flask db` sub-command is added by Flask-Migrate to manage everything related to database migrations. To enable easier and safer database the `falsk db`sub command was utalised. 
+
+
+![database-migration-repository](./images/L-252_Database_Migration_Repository.png)
+
+
 
 ## Automated Testing
 
