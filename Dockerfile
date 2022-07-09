@@ -1,4 +1,4 @@
-FROM python:3.10.4-slim-buster as base
+FROM python:3.10.4-slim-bullseye as base
 
 WORKDIR /app
 
