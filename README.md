@@ -230,7 +230,7 @@ Continuous Integration (CI) is a DevOps software development practice where deve
 
 This project utalises the `snyk fix` command, `snyk fix ` is a new CLI command to apply the recommended updates for supported ecosystems automatically. Snyk CLI bring functionality of Snyk into the workflow. The CLI can be run locally or in the CI/CD pipeline to scan for vulnerabilities and licencse issues. 
 
-Snyk CLI is Open Source and Supprts many languages and tools including Java, .NET, JavaScript, Python, Golang, PHP, C/C++, Ruby, and Scala.
+Snyk CLI is Open Source and Supports many languages and tools including Java, .NET, JavaScript, Python, Golang, PHP, C/C++, Ruby, and Scala.
 
 ### Pre-requisites
 - An account with Snyk
@@ -261,9 +261,9 @@ Run snyk Monitor on your machine (Any, virtual or local) - Sends a report to you
 - EXPOSE in Dockerfile is not respected, but can be used for local testing. Only HTTP requests are supported.
 
 ## Database Migration 
-The model class created wthin app/models.py defines the initial database structure (or schema) for this application. As the applcication will grow, the database schema will require changes to made. Alembic is a migration framework used by Flask-Migrate and will enable chema changes without database being re-created from scratch every time a change needs to be made. Alembic maintains a migration repository, which is a directory in which it stores its migration scripts. Each time a change is made to the database schema, a migration script is added to the repository with the details of the change.
+The model class created wthin app/models.py defines the initial database structure (or schema) for this application. As the applcication will grow, the database schema will require changes to made. Alembic is a migration framework used by Flask-Migrate and will enable schema changes without database being re-created from scratch every time a change needs to be made. Alembic maintains a migration repository, which is a directory in which it stores its migration scripts. Each time a change is made to the database schema, a migration script is added to the repository with the details of the change.
 
-Flask-Migrate exposes its commands through the `flask` command, we the `flask` command is utalised through `flask run`, a sub-command native to Flask. The `flask db` sub-command is added by Flask-Migrate to manage everything related to database migrations. To enable easier and safer database the `falsk db`sub command was utalised. 
+Flask-Migrate exposes its commands through the `flask` command, the `flask` command is utilised through `flask run`, a sub-command native to Flask. The `flask db` sub-command is added by Flask-Migrate to manage everything related to database migrations. To enable easier and safer database migrations the `falsk db`sub command was utilised. 
 
 
 ![database-migration-repository](./images/L-252_Database_Migration_Repository.png)
