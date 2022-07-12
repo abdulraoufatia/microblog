@@ -30,7 +30,7 @@ This README is structured like this:
 - Containerisation: Docker
 - Continious Integration: GitHub Actions / Docker
 - Continious Delivery: GitHub Actions / Dockerhub / Heroku
-- Database Management: SQLAlchemy
+- Database Management: SQLAlchemy, SQLite
 
 ## System Requirements
 
@@ -225,25 +225,25 @@ Continuous Integration (CI) is a DevOps software development practice where deve
 5. Image deployed on Heroku
 6. Notification is sent
 
-
 ## Detecting and Fixing Dependency Vulnerabilities
 
-This project utalises the `snyk fix` command, `snyk fix ` is a new CLI command to apply the recommended updates for supported ecosystems automatically. Snyk CLI bring functionality of Snyk into the workflow. The CLI can be run locally or in the CI/CD pipeline to scan for vulnerabilities and licencse issues. 
+This project utalises the `snyk fix` command, `snyk fix` is a new CLI command to apply the recommended updates for supported ecosystems automatically. Snyk CLI bring functionality of Snyk into the workflow. The CLI can be run locally or in the CI/CD pipeline to scan for vulnerabilities and licencse issues.
 
 Snyk CLI is Open Source and Supports many languages and tools including Java, .NET, JavaScript, Python, Golang, PHP, C/C++, Ruby, and Scala.
 
 ### Pre-requisites
-- An account with Snyk
-- Snyk CLI Installed 
-- Snyk CLI authenticated with your device 
 
-### Getting Started with Snyk CLI - Local Machine 
+- An account with Snyk
+- Snyk CLI Installed
+- Snyk CLI authenticated with your device
+
+### Getting Started with Snyk CLI - Local Machine
+
 - Install snyk cli with `npm install -g snyk`
-- Authorise your snky account with the CLI with `snyk auth`, ensure to to be logged in prior to authenticating - Create an account if you do not have one. 
+- Authorise your snky account with the CLI with `snyk auth`, ensure to to be logged in prior to authenticating - Create an account if you do not have one.
 - Test your application for vulnerabilities using `snyk test`
 
 ![Snyk-Text](./images/L-252_Snyk_Test.png)
-
 
 - Fix the vulnerability with `snyk fix`
 
@@ -251,8 +251,9 @@ Snyk CLI is Open Source and Supports many languages and tools including Java, .N
 
 This aforeattached image represents fixing 1 vulnerable path, Pin lxml@4.8.0 to lxml@4.9.1 to fix - ✗ NULL Pointer Dereference (new) [Medium Severity][https://snyk.io/vuln/SNYK-PYTHON-LXML-2940874] in lxml@4.8.0 introduced by pyspelling@2.7.3 > lxml@4.8.0 .
 
-### Using Github Actions and Snyk 
-Run snyk Monitor on your machine (Any, virtual or local) - Sends a report to your Snyk Dashboard for further monitoring. You are able to find the latest monitored as a report.  The report will show you a project and how to fix it. You can mointor projects with Snyk Container, Snyk Opensource and Snyk IaC. 
+### Using Github Actions and Snyk
+
+Run snyk Monitor on your machine (Any, virtual or local) - Sends a report to your Snyk Dashboard for further monitoring. You are able to find the latest monitored as a report.  The report will show you a project and how to fix it. You can mointor projects with Snyk Container, Snyk Opensource and Snyk IaC.
 
 ### Important Heroku Dockerfile commands and runtime
 
@@ -260,15 +261,39 @@ Run snyk Monitor on your machine (Any, virtual or local) - Sends a report to you
 - The web process must listen for HTTP traffic on $PORT, which is set by Heroku
 - EXPOSE in Dockerfile is not respected, but can be used for local testing. Only HTTP requests are supported.
 
-## Database Migration 
+# Database
+
+## Database Migration Repoistory
+
 The model class created wthin app/models.py defines the initial database structure (or schema) for this application. As the applcication will grow, the database schema will require changes to made. Alembic is a migration framework used by Flask-Migrate and will enable schema changes without database being re-created from scratch every time a change needs to be made. Alembic maintains a migration repository, which is a directory in which it stores its migration scripts. Each time a change is made to the database schema, a migration script is added to the repository with the details of the change.
 
-Flask-Migrate exposes its commands through the `flask` command, the `flask` command is utilised through `flask run`, a sub-command native to Flask. The `flask db` sub-command is added by Flask-Migrate to manage everything related to database migrations. To enable easier and safer database migrations the `falsk db`sub command was utilised. 
-
+Flask-Migrate exposes its commands through the `flask` command, the `flask` command is utilised through `flask run`, a sub-command native to Flask. The `flask db` sub-command is added by Flask-Migrate to manage everything related to database migrations. To enable easier and safer database migrations the `falsk db`sub command was utilised.
 
 ![database-migration-repository](./images/L-252_Database_Migration_Repository.png)
 
+## First Database Migration 
 
+Upon the development of the migration repository, the first database migration was developed overseeing will the users table that maps to the User database model. 
+
+The command utilised to create the database migration `flask db migrate -m "users table"`. Here, the table created was titled as "users" table.
+
+![first_database_migration](./images/L-253_flask_db_migrate_-m_command.png)
+
+ Explanining what is happening above:
+
+ The first two lines are informational can be ignored. A user table and two indexes were then found, then it tells you where it wrote the migration script. The `b1d826c7f739` code is an automatically generated unique code for the migration . The comment given with the -m option is optional, it adds a short descriptive text to the migration.
+
+Discussing what was generated:
+
+TL DR:
+
+Two functions `upgrade()` and `downgrade()`. The `upgrade()` function applies the migration, and the `downgrade()` function removes it. This allows Alembic to migrate the database to any point in the history, to older versions also, by using the downgrade path.
+
+Once the database migration was developed, the changes were applied by envoking `flask db upgrade`
+
+![flask_db_upgrade_command](./images/L-253_flask_db_upgrade_command.png)
+
+As the application database engine SQLALchemy utalises SQLite, the `SQL`
 
 ## Automated Testing
 
