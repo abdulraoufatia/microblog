@@ -293,7 +293,7 @@ Once the database migration was developed, the changes were applied by envoking 
 
 ![flask_db_upgrade_command](./images/L-253_flask_db_upgrade_command.png)
 
-As the application database engine SQLALchemy utalises SQLite, the `SQL`
+As the application database engine SQLALchemy utilises SQLite, the ``
 
 ## Automated Testing
 
