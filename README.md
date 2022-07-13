@@ -271,9 +271,9 @@ Flask-Migrate exposes its commands through the `flask` command, the `flask` comm
 
 ![database-migration-repository](./images/L-252_Database_Migration_Repository.png)
 
-## First Database Migration 
+## First Database Migration
 
-Upon the development of the migration repository, the first database migration was developed overseeing will the users table that maps to the User database model. 
+Upon the development of the migration repository, the first database migration was developed overseeing will the users table that maps to the User database model.
 
 The command utilised to create the database migration `flask db migrate -m "users table"`. Here, the table created was titled as "users" table.
 
@@ -294,6 +294,16 @@ Once the database migration was developed, the changes were applied by envoking 
 ![flask_db_upgrade_command](./images/L-253_flask_db_upgrade_command.png)
 
 As the application database engine SQLALchemy utilises SQLite, the ``
+
+## Database Upgrade and Downgrade Workflow - Database Migration Strategy, Explained
+
+The application is currently at it's infancy stage. However in the case of an application being on a development machine and deployed to a production server and was decided for the next release a new change to the models will be introduced, for example, a new table to be added. Without migration, one would need to figure out how to the change schema of the database, both in development and production.
+
+However, as we have database migration support, models in the appliation can be modified to generate a new migration script by envoking  `flask db migrate`. It is best to review the new model to ensure automatic generation did the right thing. Changes are then applied to the development database by running `flask db upgrade`.
+
+Once the new version is ready to be released to the production environment, one would need to run `flask db upgrade`. Alembic will detect that the production database is not updated to the latest revision of the schema, and run all the new migration scripts that were created after the previous release.
+
+To undo a last mirgration, `flask db downgrade` command is to be utilised. This command is unlikley to be used during production, however can be useful during development should one need to downgrade, delete a migration script then continue to generate a new script to replace it.
 
 ## Automated Testing
 
