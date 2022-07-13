@@ -305,6 +305,10 @@ Once the new version is ready to be released to the production environment, one 
 
 To undo a last mirgration, `flask db downgrade` command is to be utilised. This command is unlikley to be used during production, however can be useful during development should one need to downgrade, delete a migration script then continue to generate a new script to replace it.
 
+## giDatabase Relationship
+
+TBD
+
 ## Automated Testing
 
 - to use pytest
