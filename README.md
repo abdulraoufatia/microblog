@@ -281,7 +281,7 @@ The command utilised to create the database migration `flask db migrate -m "user
 
  Explanining what is happening above:
 
- The first two lines are informational can be ignored. A user table and two indexes were then found, then it tells you where it wrote the migration script. The `b1d826c7f739` code is an automatically generated unique code for the migration . The comment given with the -m option is optional, it adds a short descriptive text to the migration.
+ The first two lines are informational can be ignored. A user table and two indexes were then found, then it tells you where it wrote the migration script. The `b1d826c7f739` string is an automatically generated unique code for the migration. The comment given with the -m option is optional, it adds a short descriptive text to the migration.
 
 Discussing what was generated:
 
@@ -295,7 +295,7 @@ Once the database migration was developed, the changes were applied by envoking 
 
 As the application database engine SQLALchemy utilises SQLite, the ``
 
-## Database Upgrade and Downgrade Workflow - Database Migration Strategy, Explained
+## Database Migration Strategy - Explained
 
 The application is currently at it's infancy stage. However in the case of an application being on a development machine and deployed to a production server and was decided for the next release a new change to the models will be introduced, for example, a new table to be added. Without migration, one would need to figure out how to the change schema of the database, both in development and production.
 
@@ -305,9 +305,21 @@ Once the new version is ready to be released to the production environment, one 
 
 To undo a last mirgration, `flask db downgrade` command is to be utilised. This command is unlikley to be used during production, however can be useful during development should one need to downgrade, delete a migration script then continue to generate a new script to replace it.
 
-## giDatabase Relationship
+## Database Relationship - Explained
 
-TBD
+Relational databases are good to categorise and store data which then can be queried and filtred to extract information.
+
+In the case of a user writing a blog post, the user will have a record in the users table, where the post will have a record in the posts table. An efficient method to record who wrote a given post is to link two related records.
+
+Once a relationship is established, one is able to peform complex queries such as reversing relationships; finding out which user wrote a certain blog post. Flask-SQLAlchemy can help with both types of queries.
+
+In commit [b5aaf13](https://github.com/abdulraoufatia/microblog/pull/32/commits/b5aaf13caaba9402361a88ccf3a700f2dc3e7be6), app/models.py was modified, a schema for a new posts table was developed:
+
+![L-255_Schema_for_new_posts_table](./images/L-255_Schema_for_new_posts_table.png)
+
+Descibring the attached image, the database diagram above shows foreign keys as a link between the `user_id` and the `id` fields of the table it refers to. This kind of relationship is called a one-to-many, because "one" user writes "many" posts.
+
+The `user_id` field is called a *foreign key* as it is the Child key, where as mentioned, the `id` is the primary key. Further describing the image attached, The posts table contains a required `id`, the `body` of the post and `timestamp`. In addition to these expected fields, a `user_id` field was added, linking the post to its author.
 
 ## Automated Testing
 
