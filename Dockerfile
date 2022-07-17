@@ -1,4 +1,4 @@
-FROM python:3.10.4-slim-bullseye as base
+FROM python:3.10.5-slim-bullseye as base
 
 WORKDIR /app
 
@@ -8,6 +8,7 @@ ARG DEV_PORT=4000
 
 RUN apt-get update \
     && apt-get -y install curl \
+    && apt-get -y install openssl \
     && curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 
 EXPOSE ${DEV_PORT}  

@@ -16,6 +16,9 @@ jobs:
       uses: snyk/actions/python-3.8@master
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+    
+    - name: Running Snyk Test
+      run: snyk monitor && snyk test
 
     - name: Buidling Docker Image
       run: docker build --target development --tag microblog:development .
