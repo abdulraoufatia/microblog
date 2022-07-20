@@ -58,6 +58,10 @@ jobs:
         cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/microblog:buildcache
         cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/microblog:buildcache,mode=max
 
+
+    - name: Setting up Continious Deployment
+      run: curl -dH -X POST https://$ARA-TODOAPP:${{ secrets.ARA_TODOAPP }}@ara-todoapp.scm.azurewebsites.net/api/registry/webhook
+      
     - name: Deploying to Heroku
       uses: akhileshns/heroku-deploy@v3.12.12 
       with:
