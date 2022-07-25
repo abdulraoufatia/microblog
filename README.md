@@ -322,7 +322,7 @@ plan <appservice_plan_name> --name <webapp_name> --deployment-container-image-na
   - You can enter environment variables individually via:
 
      `az webapp config appsettings set -g <resource_group_name> -n
-     <webapp_name> --settings FLASK_APP=todo_app/app. <env1=token> <env2=key>`
+     <webapp_name> --settings FLASK_APP=app.routes:app. <env1=token> <env2=key>`
 
      Don't forget to add all the environment variables your application needs.
 
@@ -332,20 +332,22 @@ Browse to `<http://<webapp_name>.azurewebsites.net/>` and confirm no functionali
 
 ### Setting up Continuous Deployment
 
-When creating an app service, Azure sets up a webhook URL. Post requests to this endpoint cause your app to restart and pull the latest version of the container
-image from the configured registry.
+When creating an app service, Azure sets up a webhook URL. Post requests to this endpoint cause your app to restart and pull the latest version of the container image from the configured registry.
 
 - Find the webhook URL: From the app service in Azure Portal, navigate to Deployment Center
 
 - Test webhook provided with:
 
-`curl -dH -X POST your_webhook_url`
+  `curl -dH -X POST your_webhook_url`
 
-- To prevent the `$username` part of the webhook being interpreted by your shell as a variable name place
-backslash before the dollar sign. For example:
-`curl -dH -X POST https://\$my-todo-app:abc123@...etc`
+- To prevent the `$username` part of the webhook being interpreted by your shell as a variable name place backslash before the dollar sign. For example:
+`curl -dH -X POST https://\$microblog-aatia:abc123@...etc`
 
 - The command was then added to the CD pipeline
+
+Kindly note, the App Service and App Service Plan have been deleted, and the link within the image is not functional. To confirm the test of the application, please image attached:
+
+![L-280-testing-webapp](./images/L-280-testing-webapp.png)
 
 ## Detecting and Fixing Dependency Vulnerabilities
 
