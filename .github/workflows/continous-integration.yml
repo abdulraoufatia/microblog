@@ -59,7 +59,7 @@ jobs:
         cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/microblog:buildcache,mode=max
     
     - name: Testing Deployed Application through Microsoft Azure Web App Service
-    - run: curl -dH -X POST ${{ secrets.AZURE_WEBHOOK_MICROBLOG }}
+      run: curl -dH -X POST ${{ secrets.AZURE_WEBHOOK_MICROBLOG }}
 
     - name: Deploying to Heroku
       uses: akhileshns/heroku-deploy@v3.12.12 
