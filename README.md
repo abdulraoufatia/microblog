@@ -345,7 +345,9 @@ When creating an app service, Azure sets up a webhook URL. Post requests to this
 
 - The command was then added to the CD pipeline
 
-Kindly note, the App Service and App Service Plan have been deleted, and the link within the image is not functional. To confirm the test of the application, please image attached:
+  ![L-280-Continious-deployment](./images/L-280-ContiniousDeployment%20.png)
+
+Kindly note, App Service and App Service Plan have been deleted, and the link within the image is not functional. To confirm the test of the application, please see image attached:
 
 ![L-280-testing-webapp](./images/L-280-testing-webapp.png)
 
