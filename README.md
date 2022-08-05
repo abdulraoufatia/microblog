@@ -19,7 +19,8 @@ This README is structured like this:
 - Receiving Form Data
 - Improving Field Validation
 - Generating links with `url_for` flask argument
-- Database Adminstration (SQLAlchemy, SQLite)
+- Database Administration (SQLAlchemy, SQLite)
+- User Login ([Flask-Login](https://flask-login.readthedocs.io/en/latest/))
 
 #### DevOps Practices Exercised
 
