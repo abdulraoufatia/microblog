@@ -21,6 +21,7 @@ This README is structured like this:
 - Generating links with `url_for` flask argument
 - Database Administration (SQLAlchemy, SQLite)
 - User Login ([Flask-Login](https://flask-login.readthedocs.io/en/latest/))
+  - Authentication (UserMixin) 
 
 #### DevOps Practices Exercised
 
