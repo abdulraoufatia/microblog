@@ -21,7 +21,8 @@ This README is structured like this:
 - Generating links with `url_for` flask argument
 - Database Administration (SQLAlchemy, SQLite)
 - User Login ([Flask-Login](https://flask-login.readthedocs.io/en/latest/))
-  - Authentication (UserMixin) 
+  - Authentication (UserMixin)
+  - Logging in (`current_user()`, `login_user()`)
 
 #### DevOps Practices Exercised
 
@@ -353,15 +354,15 @@ When creating an App Service, Azure sets up a webhook URL. Post requests to this
 
 - The command was then added to the CD pipeline
 
-  ![L-280-Continious-deployment](./images/L-280-ContiniousDeployment%20.png)
+  ![L-280-Continuous-deployment](./images/L-280-ContiniousDeployment%20.png)
 
-Kindly note, App Service and App Service Plan have been deleted, and the link within the image is not functional. To confirm the test of the application, please see the image attached:
+Kindly note, the App Service and App Service Plan have been deleted, and the link within the image is not functional. To confirm the test of the application, please see the image attached:
 
 ![L-280-testing-webapp](./images/L-280-testing-webapp.png)
 
 ## Detecting and Fixing Dependency Vulnerabilities
 
-Snyk CLI bring the functionality of Snyk into the workflow. The CLI can be run locally or in the CI/CD pipeline to scan for vulnerabilities and license issues.
+Snyk CLI brings the functionality of Snyk into the workflow. The CLI can be run locally or in the CI/CD pipeline to scan for vulnerabilities and license issues.
 
 Snyk CLI is Open Source and Supports many languages and tools including Java, .NET, JavaScript, Python, Golang, PHP, C/C++, Ruby, and Scala.
 
@@ -417,7 +418,7 @@ The command utilised to create the database migration `flask db migrate -m "user
 
 ![first_database_migration](./images/L-253_flask_db_migrate_-m_command.png)
 
-Explanining what is happening above:
+Explaining what is happening above:
 
  The first two lines are informational and can be ignored. A user table and two indexes were then found, and then it tells you where it wrote the migration script. The `b1d826c7f739` string is an automatically generated unique code for the migration. The comment given with the -m option is optional, it adds a short descriptive text to the migration.
 
@@ -484,7 +485,7 @@ Multiple changes can be accumulated in a session and once all the changes have b
 
 `db.session.commit`
 
- If at any time while working on a session there is an error, a call to db.session.rollback() will abort the session and remove any changes stored in it. From PR fill-in blank, the database contains two users. Queries can be made to the database to answer desired questions.
+ If at any time while working on a session there is an error, a call to db.session.rollback() will abort the session and remove any changes stored in it. From the PR fill-in blank, the database contains two users. Queries can be made to the database to answer desired questions.
 
  ```python
 >>> users = User.query.all()
@@ -497,9 +498,9 @@ Multiple changes can be accumulated in a session and once all the changes have b
 2 susan
  ```
 
-### Adding a blogpost to the Database 
+### Adding a blog post to the Database 
 
-The example below illustrates the ability to add a blogpost to the database, assigned to user id 1 (John), from the tutorial above. One can erase test users and posts created above. To do this, create a for loop to iterate through the users and utilise the `db.session.delete()` query, and likewise for the posts:
+The example below illustrates the ability to add a blog post to the database, assigned to user id 1 (John), from the tutorial above. One can erase test users and posts created above. To do this, create a for loop to iterate through the users and utilise the `db.session.delete()` query, and likewise for the posts:
 
 ```
 >>> users = User.query.all()
@@ -516,8 +517,8 @@ The example below illustrates the ability to add a blogpost to the database, ass
 For further information, please visit the official [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) documentation many options that are available to query the database.
 
 ## Automated Testing
-
-- to use pytest
+- [ ] Create a user
+- [ ] Login form, confirm not registered user
 
 Ideas:
 
