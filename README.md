@@ -516,8 +516,8 @@ The example below illustrates the ability to add a blogpost to the database, ass
 For further information, please visit the official [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) documentation many options that are available to query the database.
 
 ## Automated Testing
-
-- to use pytest
+- [ ] Create a user
+- [ ] Login form, confirm not registered user
 
 Ideas:
 
