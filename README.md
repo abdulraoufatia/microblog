@@ -23,6 +23,7 @@ This README is structured like this:
 - User Login ([Flask-Login](https://flask-login.readthedocs.io/en/latest/))
   - Authentication (UserMixin)
   - Logging in (`current_user()`, `login_user()`)
+  - Logging out (`logout_user`)
 
 #### DevOps Practices Exercised
 
