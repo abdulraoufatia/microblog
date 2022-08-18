@@ -24,6 +24,7 @@ This README is structured like this:
   - Authentication (UserMixin)
   - Logging in (`current_user()`, `login_user()`)
   - Logging out (`logout_user`)
+  - Auth Security (`@login_required`, `login_view`)
 
 #### DevOps Practices Exercised
 
@@ -50,7 +51,7 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 
 ```
 
-Once Poetry is installed it does not need activating, it can be used in different ways, see [documentation](https://python-poetry.org/docs/cli/) (https://python-poetry.org/docs/cli/).
+Once Poetry is installed it does not need activating it can be used in different ways, see [documentation](https://python-poetry.org/docs/cli/) (https://python-poetry.org/docs/cli/).
 
 ### Virtualenv installation and activation
 
