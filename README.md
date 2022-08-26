@@ -518,6 +518,11 @@ The example below illustrates the ability to add a blog post to the database, as
 
 For further information, please visit the official [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) documentation many options that are available to query the database.
 
+## Showing logged in user the homepage
+
+Instead of the fake user developed we can use Flask-Login's `current_user` in the template through ` <h1>Hi, {{ current_user.username }}!</h1>`. 
+
+
 ## Automated Testing
 - [ ] Create a user
 - [ ] Login form, confirm not registered user
