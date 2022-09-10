@@ -9,7 +9,7 @@ ARG DEV_PORT=4000
 RUN apt-get update \
     && apt-get -y install curl \
     && apt-get -y install openssl \
-    && curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+    && curl -sSL https://install.python-poetry.org | python3 -
 
 EXPOSE ${DEV_PORT}  
 
