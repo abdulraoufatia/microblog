@@ -526,12 +526,17 @@ Instead of the fake user developed we can use Flask-Login's `current_user` in th
 
 ### Registering the user
 To help with registering the user four changes were made: 
+
 - the creation of a user registration form class, 
 - developing a registration template, 
 - linking the registration page on the login form and finally, 
 - a view function was written to handle user registration in `app/routes.py`
 
-The user story oversaw the guided plan so users can register themselves through a web form. Interesting things happen related to validation. additional validators were added to ensure that the user types match the structure of an email address. A room for improvement would include blocking certain domains that are usually temporary. In addition, the username and addresses entered are not already in the database. In the event a result exists, a validation error is triggered by raising an exception of type `ValidationError`. The message included as the argument in the exception will be the message that will be displayed next to the field for the user to see. Finally, the user invoking the appropriate route is not logged. The form is handled in the way for logging in where logic is exercised through the `if validate_on_submit()` and then redirects to the login prompt so a user can log in.
+The user story oversaw the guided plan so users can register themselves through a web form. Interesting things happen related to validation. Additional validators were added to ensure that the user types match the structure of an email address. A room for improvement would include blocking certain domains that are usually temporary.
+
+In addition, the username and addresses entered are not already in the database. In the event a result exists, a validation error is triggered by raising an exception of type `ValidationError`. 
+
+The message included as the argument in the exception will be the message that will be displayed next to the field for the user to see. Finally, the user invoking the appropriate route is not logged. The form is handled in the way for logging in where logic is exercised through the `if validate_on_submit()` and then redirects to the login prompt so a user can log in.
 
 
 ## Automated Testing
