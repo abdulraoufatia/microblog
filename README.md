@@ -25,6 +25,8 @@ This README is structured like this:
   - Logging in (`current_user()`, `login_user()`)
   - Logging out (`logout_user`)
   - Auth Security (`@login_required`, `login_view`)
+  - Register Users
+
 
 #### DevOps Practices Exercised
 
@@ -518,9 +520,23 @@ The example below illustrates the ability to add a blog post to the database, as
 
 For further information, please visit the official [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) documentation many options that are available to query the database.
 
-## Showing logged in user the homepage
+## Showing logged-in users the homepage
 
 Instead of the fake user developed we can use Flask-Login's `current_user` in the template through ` <h1>Hi, {{ current_user.username }}!</h1>`. 
+
+### Registering the user
+To help with registering the user four changes were made: 
+
+- the creation of a user registration form class, 
+- developing a registration template, 
+- linking the registration page on the login form and finally, 
+- a view function was written to handle user registration in `app/routes.py`
+
+The user story oversaw the guided plan so users can register themselves through a web form. Interesting things happen related to validation. Additional validators were added to ensure that the user types match the structure of an email address. A room for improvement would include blocking certain domains that are usually temporary.
+
+In addition, the username and addresses entered are not already in the database. In the event a result exists, a validation error is triggered by raising an exception of type `ValidationError`. 
+
+The message included as the argument in the exception will be the message that will be displayed next to the field for the user to see. Finally, the user invoking the appropriate route is not logged. The form is handled in the way for logging in where logic is exercised through the `if validate_on_submit()` and then redirects to the login prompt so a user can log in.
 
 
 ## Automated Testing
