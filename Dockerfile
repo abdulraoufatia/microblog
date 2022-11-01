@@ -15,9 +15,9 @@ EXPOSE ${DEV_PORT}
 
 COPY . /app/
 
-ENV PATH="${PATH}:/root/.local/bin"
-
 RUN poetry config virtualenvs.create false --local && poetry install
+
+ENV PATH="${PATH}:/root/.local/bin"
 
 FROM base as development
 
