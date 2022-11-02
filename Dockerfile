@@ -1,4 +1,4 @@
-FROM python:3.10.8-slim-bullseye as base
+FROM python:3.11.0-slim as base
 
 WORKDIR /app
 
@@ -9,11 +9,13 @@ ARG DEV_PORT=4000
 RUN apt-get update \
     && apt-get -y install curl \
     && apt-get -y install openssl \
-    && curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+    && curl -sSL https://install.python-poetry.org | python3 -
 
 EXPOSE ${DEV_PORT}  
 
 COPY . /app/
+
+ENV PATH="${PATH}:/root/.local/bin"
 
 RUN poetry config virtualenvs.create false --local && poetry install
 
