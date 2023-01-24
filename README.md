@@ -68,7 +68,7 @@ pip install virtualenv
 You would then need to create a virtual env. for the project:
 
 ```bash
-pip -m venv name-of-venv
+virtualenv <my_env_name>
 ```
 
 Activate the venv (Mac OS):
@@ -232,9 +232,9 @@ You may view the application by visiting the Heroku web app at [my-microblog-app
 - The web process must listen for HTTP traffic on $PORT, which is set by Heroku
 - EXPOSE in Dockerfile is not respected, but can be used for local testing. Only HTTP requests are supported.
 
-### Continuous Deployment - Tooling and Cloud Infrastructure
+### Continuous Deployment - Tooling and Cloud Infrastructure, Azure and AWS
 
-### Getting Ready
+### Getting Ready - Azure
 
 One would need to have an Azure account set up for this part. If you do not have an Azure Account, create one here at [Microsoft Azure - GB](https://azure.microsoft.com/en-gb/free/) (azure.microsoft.com).
 
@@ -364,6 +364,11 @@ Kindly note, the App Service and App Service Plan have been deleted, and the lin
 
 ![L-280-testing-webapp](./images/L-280-testing-webapp.png)
 
+### Getting Ready - AWS
+1 - Install the Zappa
+`pip install zappa`
+
+2 - AWS Credentials 
 ## Detecting and Fixing Dependency Vulnerabilities
 
 Snyk CLI brings the functionality of Snyk into the workflow. The CLI can be run locally or in the CI/CD pipeline to scan for vulnerabilities and license issues.
