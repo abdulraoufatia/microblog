@@ -6,7 +6,7 @@ authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-Flask = "^2.1.1"
+Flask = "^2.2.5"
 WTForms = "^3.0.1"
 Flask-WTF = "^1.0.1"
 pyspelling = "^2.7.3"
@@ -21,7 +21,7 @@ email-validator = "^1.2.1"
 black = "^22.10.0"
 
 [tool.poetry.dev-dependencies]
-Flask = "^2.1.1"
+Flask = "^2.2.5"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
